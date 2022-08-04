@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Insert  element in Array</title>
+    <script>
+    //  let data = [10,20,30,40,60,70,80,90,100];
+    //  let newEl = 50;
+    //  let position = 4;
+    //  console.warn(data); 
+    //  for(let i=data.length-1;i>=0;i--){
+    //     console.warn(data[i]);
+    //     if(i>=position)
+    //     {
+    //       data[i+1] = data[i];
+    //       if(i==position){
+    //         data[i] = newEl;
+    //       }
+
+    //     }
+    //  }
+    //  console.log(data);
+     function insertEl()
+     {
+         let data = [10,20,30,40,60,70,80,90,100];
+     let newEl = document.getElementById("newposition").value;
+     newEl = parseInt(newEl);
+     let position = document.getElementById("position").value;
+     console.warn(data); 
+     for(let i=data.length-1;i>=0;i--){
+        console.warn(data[i]);
+        if(i>=position)
+        {
+          data[i+1] = data[i];
+          if(i==position){
+            data[i] = newEl;
+          }
+
+        }
+     }
+     console.warn(data);
+     }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="position" placeholder="enter position"/>  
+    <input type="text" id="newposition" placeholder="enter new position"/>
+      <button onclick="insertEl()">Insert </button>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack</title>
+    <script>
+      //Important -: peek == maximum value full  hui hai ya nahi check kar sakte hai
+      let data = [];
+      let currentSize = data.length;
+      let max = 4;
+      function push(newVal) {
+        if (currentSize >= max) {
+          alert("Stack is Full" + newVal);
+        }
+        data[currentSize] = newVal;
+        currentSize += 1;
+      }
+
+      function pop() {
+        if (currentSize >= 0) {
+          currentSize -= 1;
+          data.length = currentSize;
+        } else {
+          alert("Stack is already full");
+        }
+      }
+
+      push(20);
+      push(34);
+      push(56);
+      pop();
+      pop();
+
+      console.warn(data);
+    </script>
+  </head>
+  <body>
+    <h1>Stack</h1>
+  </body>
+</html>

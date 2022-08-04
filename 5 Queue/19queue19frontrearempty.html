@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Queue front and rear</title>
+    <script>
+      let queue = [];
+      let currentSize = queue.length;
+      let maxSize = 5;
+
+      // function enqueue(newVal) {
+      //   if (currentSize >= maxSize) {
+      //     alert("Queue is already full");
+      //   } else {
+      //     queue[currentSize] = newVal;
+      //     currentSize++;
+      //   }
+      // }
+
+      function enqueueWithBtn() {
+        let newVal = document.getElementById("qEl").value;
+        if (currentSize >= maxSize) {
+          alert("Queue is already full");
+        } else {
+          queue[currentSize] = newVal;
+          currentSize++;
+        }
+      }
+
+      function dequeue() {
+        if (!isEmpty()) {
+          for (let i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+            //console.warn(queue[i]);
+          }
+          currentSize--;
+          queue.length = currentSize;
+        } else {
+          console.warn("queue is already empty");
+        }
+      }
+
+      function front() {
+        if (!isEmpty()) {
+          console.warn(queue[0]);
+        } else {
+          alert("queue is already empty");
+        }
+      }
+
+      function rear() {
+        if (!isEmpty()) {
+          console.warn(queue[currentSize - 1]);
+        } else {
+          alert("queue is already empty");
+        }
+      }
+
+      function display() {
+        console.warn(queue);
+      }
+
+      function isEmpty() {
+        if (currentSize <= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      // enqueue(10);
+      // enqueue(29);
+      // enqueue(28);
+      // enqueue(99);
+      // front(); // front element
+      // rear(); //last element
+      // display();
+    </script>
+  </head>
+  <body>
+    <h1>Queue with input element in JavaScript</h1>
+    <input placeholder="enter element" id="qEl" />
+    <button onclick="enqueueWithBtn()">Add Element</button>
+    <br />
+    <button onclick="dequeue()">Remove Element</button>
+    <br />
+    <button onclick="display()">display Element</button>
+    <br />
+    <button onclick="front()">Get Front Element</button>
+    <br />
+    <button onclick="rear()">rear Element</button>
+    <h4>Queue Fifo</h4>
+    <h4>Queue front and rear</h4>
+    <h4>Stack lifo</h4>
+  </body>
+</html>

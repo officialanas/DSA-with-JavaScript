@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stack With Inputs and Buttons</title>
+    <script>
+      let data = [];
+      let currentSize = data.length;
+      let max = 5;
+      function push() {
+        let newVal = document.getElementById("newEl").value;
+        if (currentSize >= max) {
+          alert("Stack is Full" + newVal);
+        }
+        data[currentSize] = newVal;
+        currentSize += 1;
+      }
+
+      function pop() {
+        if (currentSize > 0) {
+          currentSize -= 1;
+          data.length = currentSize;
+        } else {
+          alert("Stack is already full");
+        }
+      }
+      function display() {
+        for (let i = 0; i <= currentSize - 1; i++) {
+          console.warn(data[i]);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Stack With Inputs and Buttons</h1>
+    <input type="text" placeholder="Enter Stack Element" id="newEl" />
+    <button onclick="push()">Add Stack to Stack</button>
+    <button onclick="pop()">Remove Stack to Stack</button>
+    <button onclick="display()">Display all Stack to Stack</button>
+  </body>
+</html>
