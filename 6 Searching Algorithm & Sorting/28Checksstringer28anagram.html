@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Anagram</title>
+    <script>
+      function checkAnagram(str1, str2) {
+        let objStr1 = {};
+        if (str1.length != str2.length) {
+          return false;
+        }
+        for (ch of str1) {
+          // console.warn(ch);
+          objStr1[ch] = (objStr1[ch] || 0) + 1;
+        }
+        console.warn(objStr1);
+        for (ch of str2) {
+          console.warn(objStr1[ch]);
+        }
+        console.warn(objStr1[ch]);
+      }
+      console.warn(checkAnagram("hello", "ehllo"));
+    </script>
+  </head>
+  <body>
+    <h1>Check Anagram string</h1>
+  </body>
+</html>
