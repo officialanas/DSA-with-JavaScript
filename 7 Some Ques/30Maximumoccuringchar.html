@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maximum occuring character in string</title>
+    <script>
+      let str = "hello";
+      let strObj = {};
+      let maxKey = "";
+      for (let i = 0; i < str.length; i++) {
+        //console.warn(str[i]);
+        let key = str[i];
+        if (!strObj[key]) {
+          strObj[key] = 0;
+        }
+        strObj[key]++;
+        if (maxKey == "" || strObj[key] > strObj[maxKey]) {
+          maxKey = key;
+        }
+      }
+      console.warn(maxKey);
+    </script>
+  </head>
+  <body>
+    <h1>Maximum occuring character in string</h1>
+  </body>
+</html>
