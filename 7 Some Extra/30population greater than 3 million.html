@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>population greater than 3 million</title>
+    <script>
+      let cities = [
+        { name: "Los Angeles", population: 3792621 },
+        { name: "New York", population: 8175133 },
+        { name: "Chicago", population: 2695598 },
+        { name: "Houston", population: 2099451 },
+        { name: "Philadelphia", population: 1526006 },
+      ];
+
+      let bigCities = [];
+      for (let i = 0; i < cities.length; i++) {
+        if (cities[i].population > 3000000) {
+          bigCities.push(cities[i]);
+        }
+      }
+      console.table(bigCities);
+      // or
+      //   let bigCities = cities.filter(function (e) {
+      //     return e.population > 3000000;
+      //   });
+      //   console.log(bigCities);
+    </script>
+  </head>
+  <body>
+    <h1>array ,population greater than 3 million</h1>
+  </body>
+</html>
