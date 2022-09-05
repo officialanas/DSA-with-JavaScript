@@ -43,6 +43,17 @@
             }
           }
         }
+        search(root, val) {
+          if (root === null) {
+            return false;
+          } else if (root.value === val) {
+            return true;
+          } else if (root.value > val) {
+            return this.search(root.left, val);
+          } else {
+            return this.search(root.right, val);
+          }
+        }
       }
       let bst = new BStree();
       //console.warn(bst.isTreeEmpty);
@@ -50,7 +61,7 @@
       bst.makeTree(10);
       bst.makeTree(5);
       bst.makeTree(30);
-      bst.search(10);
+      bst.search(bst.root, 10);
       console.warn(bst);
     </script>
   </head>
